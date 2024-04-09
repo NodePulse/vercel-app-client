@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     // Fetch data from the endpoint
-    fetch('deployed-vercel-app/getattendance')// just keep /getattendance if not deployed it will route to localhost:5000
+    fetch('https://vercel-app-server-ten.vercel.app/getattendance')// just keep /getattendance if not deployed it will route to localhost:5000
       .then((response) => response.json())
       .then((data) => setAttendanceData(data))
       .catch((error) => console.error('Error fetching attendance data:', error));

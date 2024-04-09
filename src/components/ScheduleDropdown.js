@@ -11,7 +11,7 @@ const ScheduleDropdown = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('vercel-deployed-server/subjects');
+        const response = await axios.get('https://vercel-app-server-ten.vercel.app/subjects');
         setScheduleData(response.data);
       } catch (error) {
         console.error('Error fetching schedule data:', error);
@@ -34,9 +34,9 @@ const ScheduleDropdown = () => {
     try {
       let endpoint;
       if (status === 'yes') {
-        endpoint = `vercel-deployed-server/update-attendance-yes/${subject}`;
+        endpoint = `https://vercel-app-server-ten.vercel.app/update-attendance-yes/${subject}`;
       } else if (status === 'no') {
-        endpoint = `vercel-deployed-server/update-attendance-no/${subject}`;
+        endpoint = `https://vercel-app-server-ten.vercel.app/update-attendance-no/${subject}`;
       }
 
       // Make API call to update attendance
